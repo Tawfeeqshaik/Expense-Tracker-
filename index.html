@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <h1>💸 My Expense Tracker</h1>
+    <p class="subtitle">Track your daily income and expenses — simple and easy!</p>
+
+    <div class="add-section">
+      <h2>➕ Add new entry</h2>
+      <div class="form-row">
+        <input type="text" id="desc" placeholder="Description (e.g. Lunch)" />
+        <input type="number" id="amt" placeholder="Amount (₹)" min="0" />
+      </div>
+      <div class="form-row">
+        <select id="type">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+        <select id="cat">
+          <option value="Food">🍕 Food</option>
+          <option value="Transport">🚌 Transport</option>
+          <option value="Shopping">🛍️ Shopping</option>
+          <option value="Entertainment">🎮 Entertainment</option>
+          <option value="Bills">💡 Bills</option>
+          <option value="Salary">💼 Salary</option>
+          <option value="Other">📦 Other</option>
+        </select>
+        <input type="date" id="dt" />
+      </div>
+      <button class="add-btn" onclick="addEntry()">Add Entry</button>
+      <p class="err-msg" id="err-msg"></p>
+    </div>
+
+    <div class="summary">
+      <div class="card total">
+        <div class="label">Balance</div>
+        <div class="amount" id="balance">₹0.00</div>
+      </div>
+      <div class="card income">
+        <div class="label">Total Income</div>
+        <div class="amount" id="total-income">₹0.00</div>
+      </div>
+      <div class="card expense-card">
+        <div class="label">Total Expenses</div>
+        <div class="amount" id="total-expense">₹0.00</div>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <label>Filter:</label>
+      <select id="filter-type" onchange="renderTable()">
+        <option value="all">All</option>
+        <option value="income">Income only</option>
+        <option value="expense">Expense only</option>
+      </select>
+      <select id="filter-cat" onchange="renderTable()">
+        <option value="all">All categories</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Bills">Bills</option>
+        <option value="Salary">Salary</option>
+        <option value="Other">Other</option>
+      </select>
+      <button class="clear-btn" onclick="clearAll()">🗑 Clear all</button>
+    </div>
+
+    <div id="empty-msg" class="empty">No entries yet. Add one above! 👆</div>
+    <table id="main-table" style="display:none">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

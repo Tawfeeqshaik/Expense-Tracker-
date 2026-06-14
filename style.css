@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px 16px;
+}
+
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 22px;
+}
+
+/* ── Add Section ── */
+.add-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.add-section h2 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  min-width: 130px;
+  padding: 9px 11px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #222;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: #4a90d9;
+  background: #fff;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 11px;
+  background: #4a90d9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #357ab8;
+}
+
+.err-msg {
+  font-size: 12px;
+  color: #d9534f;
+  margin-top: 8px;
+  min-height: 16px;
+}
+
+/* ── Summary Cards ── */
+.summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 150px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.card .label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.card .amount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card.total .amount  { color: #4a90d9; }
+.card.income .amount { color: #3a9e6f; }
+.card.expense-card .amount { color: #d9534f; }
+
+/* ── Filter Row ── */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-row label {
+  font-size: 13px;
+  color: #666;
+}
+
+.filter-row select {
+  padding: 7px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #222;
+}
+
+.clear-btn {
+  margin-left: auto;
+  padding: 7px 14px;
+  font-size: 13px;
+  background: none;
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #fff0f0;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #f0f2f5;
+  color: #666;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #222;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: #fafbfc;
+}
+
+/* ── Badges ── */
+.badge {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.income-badge {
+  background: #e3f6ec;
+  color: #2d7a52;
+}
+
+.expense-badge {
+  background: #fdecea;
+  color: #b33a38;
+}
+
+/* ── Delete Button ── */
+.del-btn {
+  background: none;
+  border: none;
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0 4px;
+}
+
+.del-btn:hover {
+  color: #a00;
+}
+
+/* ── Empty State ── */
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .summary { flex-direction: column; }
+  .form-row { flex-direction: column; }
+}
