@@ -70,8 +70,4 @@ and i finally understood why everyone says put the script tag at the bottom of b
 - filter by month
 - dark mode
 
----
 
-made this in like 2 days while learning frontend. its not perfect but im proud of it ngl
-
-feel free to use it or suggest improvements :)
